@@ -1,4 +1,5 @@
 spring.datasource.sqlScriptEncoding : UTF-8
+spring.thymeleaf : false
 spring:
   datasources:
     driverClassName : org.h2.Driver

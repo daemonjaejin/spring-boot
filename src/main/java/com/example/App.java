@@ -58,18 +58,18 @@ public class App implements CommandLineRunner{
 //        System.out.println("result = " + result);
 
         // 데이터 추가
-        Customer created = customerRepository.save(new Customer(null, "Hidetoshi", "Dekisugi"));
-        System.out.println(created + " is created!");
+//        Customer created = customerRepository.save(new Customer(null, "Hidetoshi", "Dekisugi"));
+//        System.out.println(created + " is created!");
 
         // 페이징 처리
-        Pageable pageable = new PageRequest(0, 3);
+//        Pageable pageable = new PageRequest(0, 3);
 //        Page<Customer> page = customerRepository.findAll(pageable);
-        Page<Customer> page = customerRepository.findAllOrderByName(pageable);
-        System.out.println("한 페이지당 데이터 수=" + page.getSize());
-        System.out.println("현재 페이지="+page.getNumber());
-        System.out.println("전체 페이지 수="+page.getTotalPages());
-        System.out.println("전체 데이터 수="+page.getTotalElements());
-        page.getContent().forEach(System.out::println);
+//        Page<Customer> page = customerRepository.findAllOrderByName(pageable);
+//        System.out.println("한 페이지당 데이터 수=" + page.getSize());
+//        System.out.println("현재 페이지="+page.getNumber());
+//        System.out.println("전체 페이지 수="+page.getTotalPages());
+//        System.out.println("전체 데이터 수="+page.getTotalElements());
+//        page.getContent().forEach(System.out::println);
 
         // 데이터 표시
 //        customerRepository.findAll().forEach(System.out::println);
