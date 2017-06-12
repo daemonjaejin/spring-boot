@@ -38,6 +38,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
@@ -72,6 +77,11 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity3</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -79,6 +89,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.example.App</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -14,14 +14,18 @@ import javax.persistence.*;
 @Entity
 @Table(name="customers")
 @Data
-@NoArgsConstructor
-//@AllArgsConstructor
+//@NoArgsConstructor
+@AllArgsConstructor
 public class Customer {
 
     public Customer(Integer id, String firstName, String lastName){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Customer(){
+
     }
 
     @Id
@@ -33,6 +37,10 @@ public class Customer {
 
     @Column(nullable = false)
     private String lastName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(nullable = true, name = "username")
+    private User user;
 
     public Integer getId() {
         return id;
@@ -58,12 +66,22 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", user=" + user +
                 '}';
     }
+
 }
